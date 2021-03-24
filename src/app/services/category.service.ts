@@ -17,4 +17,14 @@ export class CategoryService {
   getCategories():Observable<ListResponseModel<Category>> {
     return this.httpClient.get<ListResponseModel<Category>>(this.apiUrl);
   }
+
+  isAuthenticated(){
+    if(localStorage.getItem("token")){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
 }
